@@ -1,0 +1,32 @@
+/**********tablet*************/
+@media(max-width:815px){
+    main{
+        width: 90%;
+    }
+    input,select,label{
+       
+        width: 300px;
+        max-width:300px ;
+    }
+}
+@media(max-width:768px){
+    main{
+        margin-top: 100px;
+    }
+    #jogo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #div-jogo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-left:none;
+        padding: 0px 0px 0px 0px;
+        
+    }
+    #div-jogador{
+        width: 100%;
+    }
+}

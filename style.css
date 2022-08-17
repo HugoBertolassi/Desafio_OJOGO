@@ -1,0 +1,30 @@
+
+/*FONTES*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital@0;1&family=Squada+One&display=swap');
+
+
+
+@import url(home.css);
+@import url(media.css);
+
+
+
+:root{
+    --primaria:#F2890D;
+    --secundaria:#1180E6;
+    --terciaria:#B0A3A2;
+    --black:#000000;
+    --branco:#ffffff;
+    --fonte-padrao: 'Squada One', cursive;
+    --fonte-roboto: 'Roboto', sans-serif;
+    --fonte-PressStart: 'Press Start 2P', cursive;
+    
+
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;   
+    font-family:  var(--fonte-padrao)
+}

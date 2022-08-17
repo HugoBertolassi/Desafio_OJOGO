@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O jogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="titulo">
+            <h2 id="titulo_texto">OJOGO</h2>
+        </div>
+        
+        <div id="jogo" class="flex-row">
+            <div id="div-jogador" class="flex-col">
+                <img src="img/pessoa.png" alt="Icone_pessoa">
+                <div class="flex-col">
+                    <label for="input-nick" id="l-input-nick">Nick:</label>
+                    <input type="text" name="input-nick" id="input-nick" >
+                    
+                </div>
+                <div class="flex-col">
+                    <label for="select-option" id="l-select-option">Intervalo:</label>
+                    <select name="select-option" id="select-option">
+                        <option value="1" selected>Opção 1: 1 a 10</option>
+                        <option value="2">Opção 2: 1 a 100</option>
+                        <option value="3">Opção 3: 1 a 200</option>
+                    </select>
+                </div>
+                <button id="COMECAR"  onclick="comecarJogo()">COMEÇAR</button>
+            </div>
+           
+            <div id="div-jogo" class="flex-col">
+                <p>Olá <span id="span-nick">Fulano</span>,vamos jogar!</p>
+                <p>De acordo com a opção de intervalo que você escolheu,descubra o número.</p>
+                <div class="flex-left">
+                    <label for="input-numero"id="l-input-numero">Digite um número:</label>
+                    <input type="number" name="input-numero" id="input-numero">
+                </div>
+                <button onclick="jogar()"id="JOGAR">JOGAR</button>
+                <P ><b id="texto-resposta"></b></P>
+                <P id="texto-tentativa">Você tem <span id="texto_tentativa_span">3</span>  tentativas!</P>
+            
+            </div>    
+        </div>
+
+    </main>
+    <footer></footer>
+
+    <script src="desafio.js"></script>
+</body>
+</html>
