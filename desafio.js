@@ -5,6 +5,7 @@ let min,max;
 let nick=document.querySelector("#input-nick");
 let btn_jogar=document.querySelector('#JOGAR');
 let btn_comecar=document.querySelector("#COMECAR");
+let btn_jogarNovamente=document.querySelector("#JOGAR_NOVAMENTE");
 let texto_resposta=document.querySelector("#texto-resposta");
 let valor=document.querySelector("#input-numero");    
        
@@ -43,6 +44,7 @@ function comecarJogo(){
     texto_tentativa_span.textContent=tentativas;
     btn_jogar.disabled=false;
     btn_jogar.style.backgroundColor = "#F2890D";
+    texto_resposta.textContent="";
     
     if(nick.value!=""){//validacao se o input tem texto
         /*Ativar botao de jogo e estilo*/ 
@@ -88,6 +90,10 @@ function jogar(){
        
         if(valor.value==numero){
             texto_resposta.textContent="Parabéns,você conseguiu acertar!";   
+            btn_jogar.style.display="none";
+            btn_jogarNovamente.style.display="block";
+            btn_jogarNovamente.disabled=false;
+            
         }
         else if(valor.value>numero && valor.value<=max){
             texto_resposta.textContent="Digite um número menor!";
@@ -114,4 +120,13 @@ function jogar(){
         OJOGO será reiniciado!!!!` )
         comecarJogo()
     }
+}
+/*Funcao para reiniciar o jogo caso a pessoa acerte a opcao*/
+function jogarNovamente(){
+    btn_jogarNovamente.style.display="none";
+    btn_jogar.style.display="block";
+    btn_jogarNovamente.disabled=true;
+    valor.value=null;//limpar o campo de valor
+    comecarJogo();
+
 }

@@ -73,6 +73,7 @@ button{
     border: 3px solid #000000;
     border-radius: 20px;
     margin: 50px 0px;
+    cursor: pointer;
 }
 
 #COMECAR{
@@ -84,6 +85,12 @@ button{
     font-family:var(--fonte-PressStart) ;
     font-size: 18px;
     background-color:var(--terciaria);
+}
+#JOGAR_NOVAMENTE{
+    font-family:var(--fonte-PressStart) ;
+    font-size: 18px;
+    display: none;
+    background-color: greenyellow;
 }
 
 input,select{
@@ -146,3 +153,4 @@ p{
     font-size: 25px;
     line-height: 29px;
 }
+
