@@ -74,16 +74,18 @@ button{
     border-radius: 20px;
     margin: 50px 0px;
 }
+
 #COMECAR{
     font-family:var(--fonte-PressStart) ;
     font-size: 18px;
-    background: var(--secundaria);
+    background: var(--terciaria);
 }
 #JOGAR{
     font-family:var(--fonte-PressStart) ;
     font-size: 18px;
-    background: var(--primaria);
+    background-color:var(--terciaria);
 }
+
 input,select{
     max-width:350px ;
    

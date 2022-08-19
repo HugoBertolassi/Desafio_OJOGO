@@ -12,6 +12,8 @@
 @media(max-width:768px){
     main{
         margin-top: 100px;
+        height: 100%;
+        margin-bottom: 30px;
     }
     #jogo{
         display: flex;
@@ -28,5 +30,21 @@
     }
     #div-jogador{
         width: 100%;
+    }
+    .flex-left{
+        display: flex;
+        flex-direction: column;
+        justify-content: left ;
+        
+        align-content: left;
+    }
+    #l-input-numero{
+        width: 100%;
+        display: flex;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        text-align: left;
+        align-self:start;
+        
     }
 }

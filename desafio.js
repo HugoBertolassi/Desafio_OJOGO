@@ -2,29 +2,56 @@
 let tentativas=3;
 let numero=1;
 let min,max;
+let nick=document.querySelector("#input-nick");
+let btn_jogar=document.querySelector('#JOGAR');
+let btn_comecar=document.querySelector("#COMECAR");
+let texto_resposta=document.querySelector("#texto-resposta");
+let valor=document.querySelector("#input-numero");    
+       
 
 /*Funcao de gerar o numero aleatorio */
 function numeroAleatorio(min,max){
     numero=parseInt(Math.random() * (max - min) + min) //(max - min) + min
-    //console.log("o numero eh: "+numero)
+    console.log("o numero eh: "+numero)
 }
+
+/*Funcao de habilitar botao jogar*/
+nick.addEventListener('input',()=>{
+    if(nick.value==""){
+        btn_comecar.disabled=true;    
+        btn_comecar.style.backgroundColor = "#B0A3A2";
+        btn_jogar.disabled=true;
+        btn_jogar.style.backgroundColor = "#B0A3A2";
+    }
+    else{
+        btn_comecar.disabled=false;    
+        btn_comecar.style.backgroundColor = "#1180E6";
+        
+    }
+})
+
 
 /*Funcao de inicio do jogo e */
 function comecarJogo(){
      /*Declaracao das variaveis*/
-    let nick=document.querySelector("#input-nick").value;
-    let btn_comecar=document.querySelector("#COMECAR");
-    let texto_nick=document.querySelector("#span-nick");
+   let texto_nick=document.querySelector("#span-nick");
     let tipoJogo=document.querySelector("#select-option").options;
     let texto_tentativa_span=document.querySelector("#texto_tentativa_span");
-    
+   
     /*Inicio e atualizacao das tentativas iniciais */
     tentativas=3;
     texto_tentativa_span.textContent=tentativas;
-
-    if(nick!=""){//validacao se o input tem texto
+    btn_jogar.disabled=false;
+    btn_jogar.style.backgroundColor = "#F2890D";
+    
+    if(nick.value!=""){//validacao se o input tem texto
+        /*Ativar botao de jogo e estilo*/ 
         btn_comecar.disabled=false;
-        texto_nick.innerHTML=nick;      
+        texto_nick.innerHTML=nick.value;      
+        btn_jogar.disabled=false;
+        btn_jogar.style.backgroundColor = "#F2890D";
+    
+        /*Selecao do tipo de jogo*/
         if(tipoJogo[tipoJogo.selectedIndex].value==1){//VALOR DAS OPCOES DO SELECT
             min=1;
             max=10;
@@ -52,22 +79,23 @@ function comecarJogo(){
 /*Jogo e  validacao dos valores do jogo*/
 function jogar(){
     /*Declaracao das variaveis*/ 
-    let valor=document.querySelector("#input-numero").value;
-    let texto_resposta=document.querySelector("#texto-resposta");
     let texto_tentativa_span=document.querySelector("#texto_tentativa_span");
-    
-    if(valor!=0){//validacao se existe valor no input
+  
+  
+   
+   if(valor.value!=0){//validacao se existe valor no input
         /*Validacao do resultado do jogo*/
-        if(valor==numero){
-            texto_resposta.textContent="Parabéns,você conseguiu acertar!"
+       
+        if(valor.value==numero){
+            texto_resposta.textContent="Parabéns,você conseguiu acertar!";   
         }
-        else if(valor>numero && valor<=max){
-            texto_resposta.textContent="O número é maior!"
+        else if(valor.value>numero && valor.value<=max){
+            texto_resposta.textContent="Digite um número menor!";
             tentativas--;
             texto_tentativa_span.textContent=tentativas;
         }
-        else if(valor<numero && valor>=min){
-            texto_resposta.textContent="O número é menor!"
+        else if(valor.value<numero && valor.value>=min){
+            texto_resposta.textContent="Digite um número é maior!";
             tentativas--;
             texto_tentativa_span.textContent=tentativas;  
         }
@@ -82,7 +110,7 @@ function jogar(){
     /*Reinicio rapido do jogo*/ 
     if(tentativas==0){
         texto_resposta.textContent=" "
-        alert(`Voce não acertou o número correto que era :${numero}. 
+        alert(`Voce não acertou o número correto que era : ${numero}. 
         OJOGO será reiniciado!!!!` )
         comecarJogo()
     }
