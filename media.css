@@ -1,5 +1,5 @@
 /**********tablet*************/
-@media(max-width:815px){
+@media(max-width:888px){
     main{
         width: 90%;
     }
@@ -11,9 +11,10 @@
 }
 @media(max-width:768px){
     main{
-        margin-top: 100px;
-        height: 100%;
+        margin-top: 75px;
+        height: 1100px;
         margin-bottom: 30px;
+        /*justify-content: space-evenly;*/
     }
     #jogo{
         display: flex;
@@ -39,12 +40,7 @@
         align-content: left;
     }
     #l-input-numero{
-        width: 100%;
-        display: flex;
         white-space: nowrap;
-        flex-wrap: nowrap;
         text-align: left;
-        align-self:start;
-        
     }
 }
